@@ -16,10 +16,15 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
+
+      - name: Start SUT
+        run: |
+          # Используем правильный jar-файл!
+          java -jar ./app-replan-delivery.jar &
+          sleep 10
 
       - name: Build with Gradle
         run: ./gradlew test --info

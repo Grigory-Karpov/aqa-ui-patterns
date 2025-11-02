@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -16,13 +15,10 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
-
-
     @BeforeAll
     static void setUpAll() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-data-dir=C:/temp/chrome-profile-" + System.currentTimeMillis());
-        Configuration.browserCapabilities = options;
+
+        Configuration.headless = true;
     }
 
     @BeforeEach
