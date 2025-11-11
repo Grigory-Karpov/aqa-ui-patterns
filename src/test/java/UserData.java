@@ -1,8 +1,8 @@
-import lombok.Data;
+import lombok.Value; 
 
-@Data
+@Value 
 public class UserData {
-    private final String city;
-    private final String name;
-    private final String phone;
+    String city;
+    String name;
+    String phone;
 }
