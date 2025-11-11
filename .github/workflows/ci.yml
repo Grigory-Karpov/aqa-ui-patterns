@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -19,12 +20,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-
       - name: Start SUT
-        run: |
-          # Используем правильный jar-файл!
-          java -jar ./app-replan-delivery.jar &
-          sleep 10
+        run: java -jar artifacts/app-replay-delivery.jar &
 
       - name: Build with Gradle
-        run: ./gradlew test --info
+        run: ./gradlew test --info -Dselenide.headless=true
