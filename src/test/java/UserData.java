@@ -1,6 +1,6 @@
-import lombok.Value; 
+import lombok.Value;
 
-@Value 
+@Value
 public class UserData {
     String city;
     String name;
