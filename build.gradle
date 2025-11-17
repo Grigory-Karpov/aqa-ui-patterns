@@ -25,5 +25,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless', 'true')
+    // Теперь по умолчанию браузер будет виден.
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless', 'false')
 }
